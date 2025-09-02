@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Must match your Cargo package name if you changed it
+        BIN_NAME: ${BIN_NAME}
+    image: your-app:latest
+    ports:
+      - "8080:8080"
+    environment:
+      # Adjust as you like
+      - RUST_LOG=info
+    restart: unless-stopped

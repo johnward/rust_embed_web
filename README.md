@@ -53,10 +53,10 @@ cp env_example .env
 
 #### Dockerfile
 # Build the image
-docker build -t your-app .
+docker build --build-arg BIN_NAME=rust_embed_web -t my-service .
 
 # Run the container
-docker run --rm -p 8080:8080 your-app
+docker run --rm -p 8080:8080 my-service
 ```
 
 #### docker compose
@@ -72,3 +72,9 @@ docker compose up -d
 # Stop
 
 docker compose down
+
+### Check it works:
+
+In a browser enter:
+http://localhost:8080/api/health
+http://localhost:8080/api/hello

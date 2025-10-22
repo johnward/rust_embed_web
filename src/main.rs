@@ -36,7 +36,7 @@ async fn main() {
             .layer(TraceLayer::new_for_http()),
     );
 
-    let addr: SocketAddr = "0.0.0.0:8080".parse().unwrap();
+    let addr: SocketAddr = "0.0.0.0:8001".parse().unwrap();
 
     let listener = tokio::net::TcpListener::bind(addr)
         .await
